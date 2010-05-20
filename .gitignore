@@ -1,0 +1,4 @@
+tmp/
+log/
+*.sw*
+config/database.yml

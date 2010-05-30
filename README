@@ -1,13 +1,17 @@
-This is Allen Wei's experimental project, aimed at try newest techniques.
+This is Allen Wei's experimental project, aimed at trying cutting edge techniques.
 
 
 
 
-Techniques
+Techniques will involved
 ====================
 Postresql 
 Heroku
 Rspec TDD
 Cucumber BDD
 Capybara
+MongoDB
+Websocket
+
+
 

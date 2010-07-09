@@ -1,13 +1,14 @@
 source "http://gemcutter.org"
-gem "rails", "2.3.5"
+gem "rails", "2.3.8"
 
 #mongoDB 
 gem "mongoid"
 gem "bson_ext"
 
 gem "pg"
+gem "haml"
 
-gem "feed-normalizer"
+gem "feedzirra"
 
 group :test do 
   gem "rspec"
@@ -16,4 +17,6 @@ group :test do
   gem "cucumber-rails"
   gem "capybara"
   gem "database_cleaner"
+  gem "factory_girl"
+  gem "heckle"
 end

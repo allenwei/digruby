@@ -4,7 +4,7 @@
     %a.comment 0
   .entry 
     %h3.title 
-      %a
+      %a{:href => entry.url}
         =entry.title
     %span.date 
       =entry.date_published.to_date

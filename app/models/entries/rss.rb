@@ -4,7 +4,7 @@ module Entries
     def self.new_entry_attrs(entry)
       mappings = {
         :title => :title ,
-        :content => :content ,
+        #:content => :content ,
         :date_published => :published,
         :url => :url,
         :author => :author,

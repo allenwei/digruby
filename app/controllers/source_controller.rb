@@ -7,6 +7,6 @@ class SourceController < ApplicationController
     if source = Sources::Rss.create(:feed_url => params[:source])
       source.update
     end
-    render :action => :index
+    redirect_to :action => :index
   end
 end

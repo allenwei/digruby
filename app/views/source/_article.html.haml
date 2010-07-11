@@ -4,7 +4,7 @@
     %a.comment 0
   .entry 
     %h3.title 
-      %a{:href => entry.url}
+      %a{:href => entry.url,:target => "_blank"}
         =entry.title
     %span.date 
       =entry.date_published.to_date

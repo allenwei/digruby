@@ -3,10 +3,13 @@ class CreateSources < ActiveRecord::Migration
     create_table :sources do |t|
       t.string :name
       t.string :url
+      t.string :feed_url
       t.string :type
-      t.time :last_updated
+      t.datetime :last_updated
+      t.datetime :last_modified
       t.string :author
       t.string :image
+      t.string :etag
       t.text :description
 
       t.timestamps

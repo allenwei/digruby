@@ -1,18 +1,12 @@
-require 'open-uri'
-
 module Sources
-  class Rss < ::Source 
+  class Rss < Base
+    has_many :entries, :class_name => "::Entries::Rss", :foreign_key => :source_id
 
     def update(time = nil)
-      updated_time = self.last_updated || Time.new 
-
-      feed = FeedNormalizer::FeedNormalizer.parse open(self.url) 
-      return [] if self.last_updated && feed.last_updated < updated_time
+      feed = Feedzirra::Feed.fetch_and_parse(self.feed_url)
       feed.entries.each do |entry|
-        Entries::Rss.create_by(entry,self)
-      end 
-
-      self.update_attributes(:last_updated => Time.now)
+        self.entries.create Entries::Rss.new_entry_attrs(entry)
+      end
     end
   end
 end

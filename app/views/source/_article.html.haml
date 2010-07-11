@@ -1,0 +1,15 @@
+.article 
+  .rank
+    %a.like 0
+    %a.comment 0
+  .entry 
+    %h3.title 
+      %a
+        =entry.title
+    %span.date 
+      =entry.date_published.to_date
+    .brief
+      =entry.description
+  .clear
+  .seperator
+

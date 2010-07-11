@@ -1,30 +1,32 @@
 module Entries 
-  class Rss < ::Entry
-    def self.create_by(entry,source)
-      unless self.exists?(:url => entry.url)
-       self.create(new_entry_attrs(entry).merge(:source => source))
-      end
-    end
+  class Rss < Base
 
-    private 
     def self.new_entry_attrs(entry)
       mappings = {
         :title => :title ,
         :content => :content ,
-        :date_published => :date_published,
+        :date_published => :published,
         :url => :url,
         :author => :author,
         :categories => :categories,
-        :description => :description
+        :description => :summary
       }
 
       attrs = {}
-      
+
       mappings.each_pair do |k,v| 
-        attrs[k] = entry.send(v)
+        value = entry.send(v)
+        new_value = case value
+                    when String 
+                      value.sanitize
+                    when Array
+                      value.join(",")
+                    else
+                      value
+                    end
+        attrs[k] = new_value
       end
+      attrs
     end
-
-
   end
 end

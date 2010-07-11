@@ -3,12 +3,12 @@ class CreateEntries < ActiveRecord::Migration
     create_table :entries do |t|
       t.string :title
       t.integer :source_id
-      t.text :content
-      t.time :date_published
+      t.string :content,:limit => 20000
+      t.datetime :date_published
       t.string :url
       t.string :author
       t.string :categories
-      t.text :description
+      t.string :description, :limit => 10000
       t.string :type
 
       t.timestamps

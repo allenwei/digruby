@@ -1,0 +1,838 @@
+--- !ruby/object:Feedzirra::Parser::RSS 
+entries: 
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: bundler
+    "@_rails_html_safe": false
+  - !str 
+    str: deployment
+    "@_rails_html_safe": false
+  - !str 
+    str: gem
+    "@_rails_html_safe": false
+  - !str 
+    str: passenger
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>Before we use bundler, we unpack all dependencies into vendor folder. But we found it hard to use, especially one of your gem require <code>rubygems</code> in code, yes it happens.</p>
+      
+      <p>The killer feature bunlder has in my view is: you can install gems in any folder, that&#8217;s means you can install gems into your project folder directly. So each of your projects will has it&#8217;s own gemset.I think this is a better solution than use rvm to create separate gemset for each project(see my <a href="http://www.allenwei.cn/manage-your-gem-using-rvm-gemset/">previous entry</a>). </p>
+      
+      <p>If you have already installed bundler, or you have already using bundler, you can skip the first part, go  <a href="#passenger">bundler for passenger</a> directly</p>
+      
+      <h2>Upgrade Your Gem</h2>
+      
+      <p>First, check whether your gem version &gt;= 1.3.6, if not upgrade your gem</p>
+      
+      
+      <ul>
+      <li>For mac user, just <code class="codecolorer text vibrant"><span class="text">gem update --system</span></code> </li>
+      <li>For linux user:
+      <ol>
+      <li>Install rubygems-update gem <code class="codecolorer text vibrant"><span class="text">gem install rubygems-update</span></code> </li>
+      <li>Upgrade rubygem, run <code class="codecolorer text vibrant"><span class="text">./bin/update_rubygems</span></code>, if it says: &#8220;can&#8217;t find command&#8221;, you can go to your gem <code>EXECUTABLE DIRECTORY</code> which you can get by run command <code class="codecolorer text vibrant"><span class="text">gem environment</span></code><br />
+         </li>
+      </ol>
+      </li>
+      </ul>
+      
+      
+      
+      <h2>Install bundle</h2>
+      
+      <p>Install bundler using <code class="codecolorer text vibrant"><span class="text">gem install bundle</span></code>, as this blog wrote, bundler verison is <code>0.9.26</code></p>
+      
+      <h3 id="passenger">Manage your gems use bundle</h3>
+      
+      <p>There are good documents on <a href="http://gembundler.com/">bundler website</a>, you can check the basic usage there. I&#8217;ll not mention here.</p>
+      
+      <p>ok, let&#8217;s do it.</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">bundle install .bundle</div></div>
+      
+      <p>Yes, that&#8217;s it. Now your gems will only live in your project folder. It&#8217;s very sweet when you need deploy multi projects on one machine.</p>
+      
+      
+      <h3>Bundler with passenger</h3>
+      
+      <p>After you deploy your bundler enhanced project with passenger, passenger will yelling: <code>please gem install bundler</code>. <br />
+      the solution is add gem dependencies in <code>Gemfile</code>. Yes it&#8217;s strange, but I google about it, I haven&#8217;t better solution, if you know you can tell me.</p>
+      
+      <p> </p>
+      
+      
+      
+      <!-- AdSense Now! V1.90 --><br />
+      <!-- Post[count: 2] --><br />
+      <div class="adsense adsense-leadout" style="text-align:center;margin: 12px;"><script type="text/javascript"><!--
+      google_ad_client = "pub-0348695943159866";
+      /* 468x60, created 4/11/10 */
+      google_ad_slot = "2503401458";
+      google_ad_width = 468;
+      google_ad_height = 60;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div><img src="http://feeds.feedburner.com/~r/DigRuby/~4/GYkxe6E3Ppk" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=236
+    "@_rails_html_safe": false
+  published: 2010-07-03 05:34:22 Z
+  summary: !str 
+    str: |-
+      Before we use bundler, we unpack all dependencies into vendor folder. But we found it hard to use, especially one of your gem require rubygems in code, yes it happens.
+      
+      The killer feature bunlder has in my view is: you can install gems in any folder, that&#8217;s means you can install gems into your project folder [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: Manage Gems Separately in Different Projects Use Bundler
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/GYkxe6E3Ppk/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: ruby
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>Find a method in <code>arity</code></p>
+      
+      <p>Here is doc from ruby doc</p>
+      
+      <blockquote><p>Returns an indication of the number of arguments accepted by a method. Returns a nonnegative integer for methods that take a fixed number of arguments. For Ruby methods that take a variable number of arguments, returns -n-1, where n is the number of required arguments. For methods written in C, returns -1 if the call takes a variable number of arguments.</p></blockquote>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">&nbsp; <span style="color:#9966CC; font-weight:bold;">class</span> C<br />
+      &nbsp; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">def</span> one; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">def</span> two<span style="color:#006600; font-weight:bold;">&#40;</span>a<span style="color:#006600; font-weight:bold;">&#41;</span>; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">def</span> three<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#006600; font-weight:bold;">*</span>a<span style="color:#006600; font-weight:bold;">&#41;</span>; &nbsp;<span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">def</span> four<span style="color:#006600; font-weight:bold;">&#40;</span>a, b<span style="color:#006600; font-weight:bold;">&#41;</span>; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">def</span> five<span style="color:#006600; font-weight:bold;">&#40;</span>a, b, <span style="color:#006600; font-weight:bold;">*</span>c<span style="color:#006600; font-weight:bold;">&#41;</span>; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">def</span> six<span style="color:#006600; font-weight:bold;">&#40;</span>a, b, <span style="color:#006600; font-weight:bold;">*</span>c, <span style="color:#006600; font-weight:bold;">&amp;</span>d<span style="color:#006600; font-weight:bold;">&#41;</span>; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp;<span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp;c = C.<span style="color:#9900CC;">new</span><br />
+      &nbsp; &nbsp;c.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:one</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; 0</span><br />
+      &nbsp; &nbsp;c.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:two</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; 1</span><br />
+      &nbsp; &nbsp;c.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:three</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; -1</span><br />
+      &nbsp; &nbsp;c.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:four</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp;<span style="color:#008000; font-style:italic;">#=&gt; 2</span><br />
+      &nbsp; &nbsp;c.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:five</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp;<span style="color:#008000; font-style:italic;">#=&gt; -3</span><br />
+      &nbsp; &nbsp;c.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:six</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; -3</span><br />
+      <br />
+      &nbsp; &nbsp;<span style="color:#996600;">&quot;cat&quot;</span>.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:size</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp; &nbsp;<span style="color:#008000; font-style:italic;">#=&gt; 0</span><br />
+      &nbsp; &nbsp;<span style="color:#996600;">&quot;cat&quot;</span>.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:replace</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; 1</span><br />
+      &nbsp; &nbsp;<span style="color:#996600;">&quot;cat&quot;</span>.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:squeeze</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; -1</span><br />
+      &nbsp; &nbsp;<span style="color:#996600;">&quot;cat&quot;</span>.<span style="color:#9900CC;">method</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#ff3333; font-weight:bold;">:count</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">arity</span> &nbsp; &nbsp; <span style="color:#008000; font-style:italic;">#=&gt; -1</span></div></div><img src="http://feeds.feedburner.com/~r/DigRuby/~4/A2AH9PiroLs" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=228
+    "@_rails_html_safe": false
+  published: 2010-06-10 14:17:58 Z
+  summary: !str 
+    str: |-
+      Find a method in arity
+      
+      Here is doc from ruby doc
+      
+      Returns an indication of the number of arguments accepted by a method. Returns a nonnegative integer for methods that take a fixed number of arguments. For Ruby methods that take a variable number of arguments, returns -n-1, where n is the number of required arguments. For [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 How Many Argument a Method Has"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/A2AH9PiroLs/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: hash
+    "@_rails_html_safe": false
+  - !str 
+    str: ruby
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>Can hash have a default value, when it doesn&#8217;t have a key?</p>
+      
+      <p>Answer is yes!</p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">h = <span style="color:#CC00FF; font-weight:bold;">Hash</span>.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;default&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span><br />
+      h<span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#996600;">&quot;wrong_value&quot;</span><span style="color:#006600; font-weight:bold;">&#93;</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;default&quot;</span></div></div><img src="http://feeds.feedburner.com/~r/DigRuby/~4/5j61EvP7z3s" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=226
+    "@_rails_html_safe": false
+  published: 2010-06-10 14:12:28 Z
+  summary: !str 
+    str: |-
+      Can hash have a default value, when it doesn&#8217;t have a key?
+      
+      Answer is yes!
+      
+      h = Hash.new&#40;&#34;default&#34;&#41;
+      h&#91;&#34;wrong_value&#34;&#93; # =&#62; &#34;default&#34;
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 Set Default Value for A Hash"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/5j61EvP7z3s/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: gemset
+    "@_rails_html_safe": false
+  - !str 
+    str: ruby
+    "@_rails_html_safe": false
+  - !str 
+    str: rvm
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>I think you already heard of <a href="http://rvm.beginrescueend.com/"><span class="caps">RVM</span></a>, a great tool for ruby version management.</p>
+      
+      <p>What I like most is <a href="http://rvm.beginrescueend.com/gemsets/basics/">Gemset</a>, It allow you manage you gems in separate namespace.</p>
+      
+      <p>First, Install <span class="caps">RVM.</span> The official website have great <a href="http://rvm.beginrescueend.com/rvm/install/">document</a></p>
+      
+      <p>Then Install ruby, I&#8217;ll install ruby 1.8.7</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">rvm install 1.8.7</div></div>
+      
+      <p>After you installed ruby, you will have <code>default</code> gemset and <code>global</code> gemset<br />
+      List all you gemset</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">rvm gemset list</div></div>
+      
+      <p>Create new gemset</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">rvm gemset create new_gemset</div></div>
+      
+      <p>Use your newly created gemset</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">rvm gemset use new_gemset</div></div>
+      
+      <p>You can also set your newly created gemset as default</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">rvm use 1.8.7@new_gemset --default</div></div>
+      
+      <p>Here you may ask, do I need install all basic gem like <code>ruby-debug</code> for every gemset?</p>
+      
+      <p><a href="http://rvm.beginrescueend.com/"><span class="caps">RVM</span></a> has already solved your problem.</p>
+      
+      <p>First, switch to your global gemset.</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">rvm use 1.8.7@global</div></div>
+      
+      <p>Then Install gems which you think it is default gem</p>
+      
+      <p>Then, you can switch back to your gemset.</p>
+      
+      <p>You may think, I may installed some gems twice, here you can uninstall the gem you have already installed in <code>global</code> gemset.</p><img src="http://feeds.feedburner.com/~r/DigRuby/~4/yA9TPDs99dE" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=222
+    "@_rails_html_safe": false
+  published: 2010-06-05 02:35:09 Z
+  summary: !str 
+    str: |-
+      I think you already heard of RVM, a great tool for ruby version management.
+      
+      What I like most is Gemset, It allow you manage you gems in separate namespace.
+      
+      First, Install RVM. The official website have great document
+      
+      Then Install ruby, I&#8217;ll install ruby 1.8.7
+      
+      rvm install 1.8.7
+      
+      After you installed ruby, you will have default gemset and global gemset
+      List [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: Manage Your Gem Using RVM Gemset
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/yA9TPDs99dE/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: test
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>As previous solution doesn&#8217;t works, after read source code of <code>ActiveSupport::TestCase</code> I find a final solution.</p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap"><span style="color:#9966CC; font-weight:bold;">class</span> <span style="color:#6666ff; font-weight:bold;">ActiveSupport::TestCase</span><br />
+      &nbsp; setup <span style="color:#ff3333; font-weight:bold;">:log_test</span><br />
+      &nbsp; private <br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> log_test<br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">unless</span> <span style="color:#0066ff; font-weight:bold;">@already_logged_this_test</span> &nbsp;<br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">&quot;<span style="color:#000099;">\n</span><span style="color:#000099;">\n</span>Starting #{@method_name} in class:#{self.class.name}<span style="color:#000099;">\n</span>#{'-' * (20 + @method_name.length + self.class.name.length)}<span style="color:#000099;">\n</span>&quot;</span> &nbsp;<br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span> &nbsp;<br />
+      &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@already_logged_this_test</span> = <span style="color:#0000FF; font-weight:bold;">true</span> <br />
+      <br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span></div></div>
+      
+      <p><code>setup</code> is a callback of <code>ActiveSupport::TestCase</code>. So we doesn&#8217;t hack anything. It works fine.</p>
+      
+      <p>And what&#8217;s more <code>rake test</code> already support verbose model</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">&nbsp; rake test:units TESTOPTS=&quot;-v&quot;</div></div>
+      
+      <p>if you using run test directly like this, <code>TESTOPTS=&quot;-v&quot;</code> doesn&#8217;t work</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">ruby -Itest test/units/some_test.rb</div></div><img src="http://feeds.feedburner.com/~r/DigRuby/~4/TKWQTwxWa4A" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=190
+    "@_rails_html_safe": false
+  published: 2010-05-13 01:25:57 Z
+  summary: !str 
+    str: |-
+      As previous solution doesn&#8217;t works, after read source code of ActiveSupport::TestCase I find a final solution.
+      
+      class ActiveSupport::TestCase
+      &#160; setup :log_test
+      &#160; private 
+      &#160; def log_test
+      &#160; &#160; unless @already_logged_this_test &#160;
+      &#160; &#160; &#160; puts &#34;\n\nStarting #{@method_name} in class:#{self.class.name}\n#{'-' * (20 + @method_name.length + self.class.name.length)}\n&#34; &#160;
+      &#160; &#160; end &#160;
+      &#160; &#160; @already_logged_this_test = true 
+      
+      &#160; end
+      
+      setup is a callback of ActiveSupport::TestCase. [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 Print test name and file name when testing (Final Solution)"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/TKWQTwxWa4A/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: file
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>How can I know what&#8217;s the file name of current ruby file?</p>
+      
+      <p>Use <code>__FILE__</code></p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap"><span style="color:#008000; font-style:italic;">#file /home/allen/test.rb</span><br />
+      <br />
+      <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#0000FF; font-weight:bold;">__FILE__</span> <span style="color:#008000; font-style:italic;"># =&gt; /home/allen/test.rb</span><br />
+      <br />
+      <span style="color:#008000; font-style:italic;"># get file name</span><br />
+      <span style="color:#CC00FF; font-weight:bold;">File</span>.<span style="color:#9900CC;">basename</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF; font-weight:bold;">__FILE__</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;test.rb&quot;</span><br />
+      <span style="color:#008000; font-style:italic;"># exclude suffix</span><br />
+      <span style="color:#CC00FF; font-weight:bold;">File</span>.<span style="color:#9900CC;">basename</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF; font-weight:bold;">__FILE__</span>,<span style="color:#996600;">&quot;.rb&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;test&quot;</span><br />
+      <br />
+      <span style="color:#008000; font-style:italic;">#dir name</span><br />
+      <span style="color:#CC00FF; font-weight:bold;">File</span>.<span style="color:#9900CC;">dirname</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF; font-weight:bold;">__FILE__</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;/home/allen/&quot;</span></div></div>
+      
+      <p>Or</p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap"><span style="color:#008000; font-style:italic;">#file /home/allen/test.rb</span><br />
+      <br />
+      <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#0000FF; font-weight:bold;">__FILE__</span> <span style="color:#008000; font-style:italic;"># =&gt; /home/allen/test.rb</span><br />
+      <br />
+      <span style="color:#008000; font-style:italic;"># get file name</span><br />
+      <span style="color:#CC00FF; font-weight:bold;">Pathname</span>.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF; font-weight:bold;">__FILE__</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">basename</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;test.rb&quot;</span><br />
+      <span style="color:#008000; font-style:italic;"># exclude suffix</span><br />
+      <span style="color:#CC00FF; font-weight:bold;">Pathname</span>.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF; font-weight:bold;">__FILE__</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">basename</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#996600;">&quot;.rb&quot;</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;test&quot;</span><br />
+      <br />
+      <span style="color:#008000; font-style:italic;">#dir name</span><br />
+      <span style="color:#CC00FF; font-weight:bold;">Pathname</span>.<span style="color:#9900CC;">new</span><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF; font-weight:bold;">__FILE__</span><span style="color:#006600; font-weight:bold;">&#41;</span>.<span style="color:#9900CC;">dirname</span> <span style="color:#008000; font-style:italic;"># =&gt; &quot;/home/allen/&quot;</span></div></div>
+      
+      <p>For more <span class="caps">API </span>checkout <a href="http://ruby-doc.org/core/classes/Pathname.html">Pathname</a></p><img src="http://feeds.feedburner.com/~r/DigRuby/~4/PUjc4xJ9gsE" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=188
+    "@_rails_html_safe": false
+  published: 2010-05-11 09:04:25 Z
+  summary: !str 
+    str: |-
+      How can I know what&#8217;s the file name of current ruby file?
+      
+      Use __FILE__
+      
+      #file /home/allen/test.rb
+      
+      puts __FILE__ # =&#62; /home/allen/test.rb
+      
+      # get file name
+      File.basename&#40;__FILE__&#41; # =&#62; &#34;test.rb&#34;
+      # exclude suffix
+      File.basename&#40;__FILE__,&#34;.rb&#34;&#41; # =&#62; &#34;test&#34;
+      
+      #dir name
+      File.dirname&#40;__FILE__&#41; # =&#62; &#34;/home/allen/&#34;
+      
+      Or
+      
+      #file /home/allen/test.rb
+      
+      puts __FILE__ # =&#62; /home/allen/test.rb
+      
+      # get file name
+      Pathname.new&#40;__FILE__&#41;.basename # =&#62; &#34;test.rb&#34;
+      # exclude suffix
+      Pathname.new&#40;__FILE__&#41;.basename&#40;&#34;.rb&#34;&#41; # =&#62; &#34;test&#34;
+      
+      #dir name
+      Pathname.new&#40;__FILE__&#41;.dirname # =&#62; &#34;/home/allen/&#34;
+      
+      For more API [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 Ruby Get Current File Name"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/PUjc4xJ9gsE/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: test
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p><del>Deprecated</del></p>
+      
+      <p>See this <a href="/tips-print-test-name-and-file-name-when-testing-final-solution/">tips-print-test-name-and-file-name-when-testing-final-solution</a></p>
+      
+      
+      
+      <p>Last time to introduced <a href="http://www.allenwei.cn/tips-print-test-name-and-file-name-when-testing/">how to print test name and method when tesing</a></p>
+      
+      <p>I found it actually have problem, it can&#8217;t print test name when some testcase implement <code>setup</code> method. <code>alias_method_chain</code> will not work.</p>
+      
+      <p>Then I discovered we have a way to work around, last blog post mentioned <a href="http://www.allenwei.cn/tips-wrap-a-method-which-might-be-overrided-by-subclass/">Wrap a method which might be overrided by subclass</a></p>
+      
+      <p>So I&#8217;ll changed the code a bit like this:</p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap"><span style="color:#9966CC; font-weight:bold;">class</span> <span style="color:#6666ff; font-weight:bold;">ActiveSupport::TestCase</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9900CC;">inherited</span><span style="color:#006600; font-weight:bold;">&#40;</span>base<span style="color:#006600; font-weight:bold;">&#41;</span><br />
+      &nbsp; &nbsp; base.<span style="color:#9900CC;">class_eval</span> <span style="color:#9966CC; font-weight:bold;">do</span> <br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> setup_with_naming<br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">&quot;<span style="color:#000099;">\n</span>== #{@method_name} : #{self.class.name} ==&quot;</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; setup_without_naming &nbsp; &nbsp; &nbsp; &nbsp;<br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> setup<br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9900CC;">method_added</span><span style="color:#006600; font-weight:bold;">&#40;</span>meth<span style="color:#006600; font-weight:bold;">&#41;</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0000FF; font-weight:bold;">return</span> <span style="color:#9966CC; font-weight:bold;">if</span> <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span> = <span style="color:#0000FF; font-weight:bold;">true</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">if</span> meth.<span style="color:#9900CC;">to_s</span> == <span style="color:#996600;">&quot;setup&quot;</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alias_method_chain <span style="color:#ff3333; font-weight:bold;">:setup</span>, <span style="color:#ff3333; font-weight:bold;">:naming</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span> = <span style="color:#0000FF; font-weight:bold;">false</span><br />
+      &nbsp; &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <span style="color:#9966CC; font-weight:bold;">end</span></div></div><img src="http://feeds.feedburner.com/~r/DigRuby/~4/mliEn6Ht0rI" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=182
+    "@_rails_html_safe": false
+  published: 2010-04-14 03:58:50 Z
+  summary: !str 
+    str: |-
+      Deprecated
+      
+      See this tips-print-test-name-and-file-name-when-testing-final-solution
+      
+      
+      
+      Last time to introduced how to print test name and method when tesing
+      
+      I found it actually have problem, it can&#8217;t print test name when some testcase implement setup method. alias_method_chain will not work.
+      
+      Then I discovered we have a way to work around, last blog post mentioned Wrap a method which might be overrided [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 Print test name and file name when testing (update)"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/mliEn6Ht0rI/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: RubyOnRails
+    "@_rails_html_safe": false
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: metaprograming
+    "@_rails_html_safe": false
+  - !str 
+    str: ruby
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <h3>Problem</h3>
+      
+      <p>As you may know you can easily using <code class="codecolorer text vibrant"><span class="text">alias_method_chain</span></code> to wrap a method, but somethings it won&#8217;t work if your subclass override this method.</p>
+      
+      <p>Aussuming you have class A, and B</p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'rubygems'</span><br />
+      <span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'active_support'</span><br />
+      <br />
+      <span style="color:#9966CC; font-weight:bold;">class</span> A <br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> hello<br />
+      &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">&quot;hello&quot;</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; <br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> hello_with_from<br />
+      &nbsp; &nbsp; hello_without_from<br />
+      &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">p</span> <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9966CC; font-weight:bold;">class</span>.<span style="color:#9900CC;">name</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; alias_method_chain <span style="color:#ff3333; font-weight:bold;">:hello</span>, <span style="color:#ff3333; font-weight:bold;">:from</span><br />
+      &nbsp; <br />
+      <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <span style="color:#9966CC; font-weight:bold;">class</span> B <span style="color:#006600; font-weight:bold;">&lt;</span> A<br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> hello<br />
+      &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">&quot;hello&quot;</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      B.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">hello</span> <span style="color:#008000; font-style:italic;"># =&gt; hello</span></div></div>
+      
+      <p><code class="codecolorer text vibrant"><span class="text">alias_method_chain</span></code> doesn&#8217;t work here. because class B override hello method.</p>
+      
+      <h3>Sollution</h3>
+      
+      <p>replace <code class="codecolorer ruby vibrant"><span class="ruby">alias_method_chain <span style="color:#ff3333; font-weight:bold;">:hello</span>, <span style="color:#ff3333; font-weight:bold;">:from</span></span></code> to</p>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">&nbsp; <span style="color:#008000; font-style:italic;">#alias_method_chain :hello, :from</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9900CC;">method_added</span><span style="color:#006600; font-weight:bold;">&#40;</span>method_name<span style="color:#006600; font-weight:bold;">&#41;</span><br />
+      &nbsp; &nbsp; <span style="color:#0000FF; font-weight:bold;">return</span> <span style="color:#9966CC; font-weight:bold;">if</span> <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span><br />
+      &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span> = <span style="color:#0000FF; font-weight:bold;">true</span><br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">if</span> method_name.<span style="color:#9900CC;">to_s</span> == <span style="color:#996600;">&quot;hello&quot;</span><br />
+      &nbsp; &nbsp; &nbsp; alias_method_chain <span style="color:#ff3333; font-weight:bold;">:hello</span>, <span style="color:#ff3333; font-weight:bold;">:from</span><br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span> = <span style="color:#0000FF; font-weight:bold;">false</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span></div></div>
+      
+      <p><code>method_added</code> is the method which be called when adding method into class. So we add <code>alias_method_chain</code> after <code>class B</code> add method <code>hello</code>. </p>
+      
+      
+      
+      <h3>Whole Code</h3>
+      
+      <div class="codecolorer-container ruby vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="ruby codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap"><span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'rubygems'</span><br />
+      <span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'active_support'</span><br />
+      <br />
+      <span style="color:#9966CC; font-weight:bold;">class</span> A<br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> hello<br />
+      &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">&quot;hello&quot;</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> hello_with_from<br />
+      &nbsp; &nbsp; hello_without_from<br />
+      &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9966CC; font-weight:bold;">class</span>.<span style="color:#9900CC;">name</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> <span style="color:#0000FF; font-weight:bold;">self</span>.<span style="color:#9900CC;">method_added</span><span style="color:#006600; font-weight:bold;">&#40;</span>meth<span style="color:#006600; font-weight:bold;">&#41;</span><br />
+      &nbsp; &nbsp; <span style="color:#0000FF; font-weight:bold;">return</span> <span style="color:#9966CC; font-weight:bold;">if</span> <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span><br />
+      &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span> = <span style="color:#0000FF; font-weight:bold;">true</span><br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">if</span> meth.<span style="color:#9900CC;">to_s</span> == <span style="color:#996600;">&quot;hello&quot;</span><br />
+      &nbsp; &nbsp; &nbsp; alias_method_chain <span style="color:#ff3333; font-weight:bold;">:hello</span>, <span style="color:#ff3333; font-weight:bold;">:from</span><br />
+      &nbsp; &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      &nbsp; &nbsp; <span style="color:#0066ff; font-weight:bold;">@_in_method_added</span> = <span style="color:#0000FF; font-weight:bold;">false</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      <span style="color:#9966CC; font-weight:bold;">class</span> B <span style="color:#006600; font-weight:bold;">&lt;</span> A<br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">def</span> hello<br />
+      &nbsp; &nbsp; <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">&quot;hello&quot;</span><br />
+      &nbsp; <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <span style="color:#9966CC; font-weight:bold;">end</span><br />
+      <br />
+      B.<span style="color:#9900CC;">new</span>.<span style="color:#9900CC;">hello</span> <span style="color:#008000; font-style:italic;"># =&gt; hello \n B</span></div></div><img src="http://feeds.feedburner.com/~r/DigRuby/~4/kpx0ouYkyHI" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=176
+    "@_rails_html_safe": false
+  published: 2010-04-14 03:45:52 Z
+  summary: !str 
+    str: |-
+      Problem
+      
+      As you may know you can easily using alias_method_chain to wrap a method, but somethings it won&#8217;t work if your subclass override this method.
+      
+      Aussuming you have class A, and B
+      
+      require 'rubygems'
+      require 'active_support'
+      
+      class A 
+      &#160; def hello
+      &#160; &#160; puts &#34;hello&#34;
+      &#160; end
+      &#160; 
+      &#160; def hello_with_from
+      &#160; &#160; hello_without_from
+      &#160; &#160; p self.class.name
+      &#160; end
+      &#160; alias_method_chain :hello, :from
+      &#160; 
+      end
+      class B &#60; [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 Wrap a method which might be overrided by subclass"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/kpx0ouYkyHI/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: Tips
+    "@_rails_html_safe": false
+  - !str 
+    str: vim
+    "@_rails_html_safe": false
+  - !str 
+    str: git
+    "@_rails_html_safe": false
+  - !str 
+    str: pathogen
+    "@_rails_html_safe": false
+  - !str 
+    str: plugin
+    "@_rails_html_safe": false
+  - !str 
+    str: submodule
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p>Before this post. I assuming you already have a git repository for your vim config files somewhere.</p>
+      
+      <p>When we install vim plugin we need copy files to different folders, it&#8217;s hard to keep it up-to-date. As lot&#8217;s of vim plugin have github repository. we can use git submodule and vim plugin pathogen to keep your plugin up-to-date.</p>
+      
+      <h3>Add bundle support for vim</h3>
+      
+      <p>Fortunately <a href="http://www.vim.org/account/profile.php?user_id=9012">Tim Pope</a> wrote a plugin called <a href="http://www.vim.org/scripts/script.php?script_id=2332">pathogen</a> ,which make things easier.</p>
+      
+      <p>In the <a href="http://www.vim.org/scripts/script.php?script_id=2332">home page of the plugin</a> you can find fully install details.</p>
+      
+      <p>After you add this plugin you can manage your vim plugin in on <code>.vim/bundle</code> folder. You can unzip/untar/svn-checkout/git-clone plugin into this folder. <a href="http://www.vim.org/scripts/script.php?script_id=2332">pathogen</a>  plugin will load it automatically.<br />
+      this this what your <code>.vim</code> folder structure look like</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">.vim/<br />
+      |-- bundle<br />
+      | &nbsp; |-- ack<br />
+      | &nbsp; | &nbsp; `-- plugin<br />
+      | &nbsp; | &nbsp; &nbsp; &nbsp; `-- ack.vim<br />
+      | &nbsp; |-- bufexplorer<br />
+      | &nbsp; | &nbsp; |-- doc<br />
+      | &nbsp; | &nbsp; | &nbsp; `-- bufexplorer.txt<br />
+      | &nbsp; | &nbsp; `-- plugin<br />
+      | &nbsp; | &nbsp; &nbsp; &nbsp; `-- bufexplorer.vim<br />
+      | &nbsp; |-- conque<br />
+      | &nbsp; | &nbsp; |-- autoload<br />
+      | &nbsp; | &nbsp; | &nbsp; `-- conque_term.vim<br />
+      | &nbsp; | &nbsp; |-- doc<br />
+      | &nbsp; | &nbsp; | &nbsp; `-- conque_term.txt<br />
+      | &nbsp; | &nbsp; |-- plugin<br />
+      | &nbsp; | &nbsp; | &nbsp; `-- conque_term.vim<br />
+      | &nbsp; | &nbsp; `-- syntax<br />
+      | &nbsp; | &nbsp; &nbsp; &nbsp; `-- conque_term.vim</div></div>
+      
+      <p>So we have chance to maintain vim plugin as a whole.</p>
+      
+      <h3>How to add a submodule</h3>
+      
+      <p>For example, we add a git plugin fugitive as a submodule of our vim repository.</p>
+      
+      <p>If you have already added this plugin, make sure remove folder using</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">git rm -r .vim/bundle/fugitive</div></div>
+      
+      <p>Otherwise you will get error <code class="codecolorer text vibrant"><span class="text">'fugitive' already exists in the index</span></code></p>
+      
+      <p>Then we add vim-fugitive as submodule</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">git submodule add git://github.com/tpope/vim-fugitive.git .vim/bundle/fugitive</div></div>
+      
+      <p>After you add submodule you need register it, using</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">git submodule init</div></div>
+      
+      <h3>How to update submodule</h3>
+      
+      <p>If this plugin have updates, you can run</p>
+      
+      <div class="codecolorer-container text vibrant" style="overflow:auto;white-space:nowrap;border:1px solid #9F9F9F;width:435px;"><div class="text codecolorer" style="padding:5px;font:normal 12px/1.4em Monaco, Lucida Console, monospace;white-space:nowrap">git submodule update</div></div>
+      
+      <p>to update your submodule repository</p>
+      
+      <p>The last step push your changes to github, you will see this in your github repository</p>
+      
+      <p><img src="http://www.allenwei.cn/wp-content/uploads/2010/04/Picture-2.png" alt="Picture 2.png" border="0" width="343" height="77" /></p>
+      
+      
+      <h3>How to remove a submodule</h3>
+      
+      <p>There is not efficient way to remove a submodule<br />
+      * first step is remove references to the submodule in <code class="codecolorer text vibrant"><span class="text">.gitmodules</span></code> and <code class="codecolorer text vibrant"><span class="text">.git/config</span></code>.<br />
+      * Then <code class="codecolorer text vibrant"><span class="text">git rm --cached .vim/bundle/fugitive</span></code></p>
+      
+      <h3>Thanks</h3>
+      
+      <p>Thanks <a href="http://github.com">github</a> and <a href="http://github.com/guides/using-git-submodules-to-track-plugins">github guides about submodule</a> and <a href="http://www.vim.org/account/profile.php?user_id=9012">Tim Pope</a> who wrote many greate vim plugin.</p><img src="http://feeds.feedburner.com/~r/DigRuby/~4/vylp9m5Yp-I" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=148
+    "@_rails_html_safe": false
+  published: 2010-04-08 01:45:00 Z
+  summary: !str 
+    str: |-
+      Before this post. I assuming you already have a git repository for your vim config files somewhere.
+      
+      When we install vim plugin we need copy files to different folders, it&#8217;s hard to keep it up-to-date. As lot&#8217;s of vim plugin have github repository. we can use git submodule and vim plugin pathogen to keep your plugin [...]
+    "@_rails_html_safe": false
+  title: !str 
+    str: "Tips \xE2\x80\x93 Using git submodule keep your vim plugin up-to-date"
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/vylp9m5Yp-I/
+    "@_rails_html_safe": false
+- !ruby/object:Feedzirra::Parser::RSSEntry 
+  author: !str 
+    str: AllenWei
+    "@_rails_html_safe": false
+  categories: 
+  - !str 
+    str: vim
+    "@_rails_html_safe": false
+  - !str 
+    str: javascript
+    "@_rails_html_safe": false
+  - !str 
+    str: oo
+    "@_rails_html_safe": false
+  content: !str 
+    str: |-
+      <p><a href="http://www.allenwei.cn/vim-javascript-code-formatter-jsbeautify/">Last post</a> I introduced a vim javascript plugin called <a href="http://www.vim.org/scripts/script.php?script_id=2727">jsBeautify</a> </p>
+      
+      <p>But you&#8217;ll find when you write OO javascript, vim indent is wrong.</p>
+      
+      <p>There also a vim indent plugin called <a href="http://www.vim.org/scripts/script.php?script_id=1936"><span class="caps">OOP </span>javascript indentation</a> is want you need</p>
+      
+      <p>Download the script put at <code>~/.vim/indent</code></p><img src="http://feeds.feedburner.com/~r/DigRuby/~4/l69gEjSgVSU" height="1" width="1"/>
+    "@_rails_html_safe": false
+  entry_id: !str 
+    str: http://www.allenwei.cn/?p=143
+    "@_rails_html_safe": false
+  published: 2010-04-03 07:21:10 Z
+  summary: !str 
+    str: |-
+      Last post I introduced a vim javascript plugin called jsBeautify 
+      
+      But you&#8217;ll find when you write OO javascript, vim indent is wrong.
+      
+      There also a vim indent plugin called OOP javascript indentation is want you need
+      
+      Download the script put at ~/.vim/indent
+    "@_rails_html_safe": false
+  title: !str 
+    str: Vim OOP javascript indentation plugin
+    "@_rails_html_safe": false
+  url: !str 
+    str: http://feedproxy.google.com/~r/DigRuby/~3/l69gEjSgVSU/
+    "@_rails_html_safe": false
+etag: vOkIaKh3+ECNGE+LgiYg9Nj4H+4
+feed_url: http://feeds.feedburner.com/digruby.com
+last_modified: 2010-07-11 16:42:39 +08:00
+title: !str 
+  str: DIG RUBY
+  "@_rails_html_safe": false
+url: !str 
+  str: http://www.allenwei.cn
+  "@_rails_html_safe": false

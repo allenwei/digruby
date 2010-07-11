@@ -5,3 +5,5 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+  rss = Sources::Rss.create(:feed_url => "http://feeds2.feedburner.com/digruby",:name => "DigRuby",:url => "http://allenwei.cn")
+  rss.update

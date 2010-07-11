@@ -3,3 +3,8 @@ log/
 *.sw*
 config/database.yml
 db/schema.rb
+.bundle
+ftags
+tags.DS_Store
+.sass-cache/
+.DS_Store

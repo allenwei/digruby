@@ -1,5 +1,6 @@
 module Entries
   class Base < ActiveRecord::Base
+    validates_uniqueness_of :url
 
     set_table_name :entries
 

@@ -4,8 +4,9 @@ class SourceController < ApplicationController
   end
 
   def submit
-    source = Sources::Rss.create(:feed_url => params[:source])
-    source.update
+    if source = Sources::Rss.create(:feed_url => params[:source])
+      source.update
+    end
     render :action => :index
   end
 end

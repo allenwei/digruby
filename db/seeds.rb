@@ -5,7 +5,9 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-  rss = Sources::Rss.create(:feed_url => "http://feeds2.feedburner.com/digruby",:name => "DigRuby",:url => "http://allenwei.cn")
+if rss = Sources::Rss.create(:feed_url => "http://feeds2.feedburner.com/digruby",:name => "DigRuby",:url => "http://allenwei.cn")
   rss.update
-  rss = Sources::Rss.create(:feed_url => "http://feeds2.feedburner.com/Rubyflow",:name => "Rubyflow",:url => "http://www.rubyflow.com")
+end
+if rss = Sources::Rss.create(:feed_url => "http://feeds2.feedburner.com/Rubyflow",:name => "Rubyflow",:url => "http://www.rubyflow.com")
   rss.update
+end

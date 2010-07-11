@@ -5,7 +5,6 @@ module Sources
     def abstract_class?
       true
     end
-    validates_presence_of :url,:name
 
     def update(time)
 

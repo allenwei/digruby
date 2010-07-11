@@ -3,9 +3,11 @@ gem "rails", "2.3.5"
 
 #mongoDB 
 gem "mongo_mapper"
+gem 'bson_ext'
 
 gem "pg"
 gem "haml"
+gem 'bundler'
 
 gem "feedzirra"
 

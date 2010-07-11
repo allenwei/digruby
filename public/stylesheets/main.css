@@ -1,0 +1,261 @@
+header, footer, nav, article {
+  display: block; }
+
+a {
+  color: #2D7BB2;
+  outline: medium none;
+  text-decoration: none;
+  cursor: pointer; }
+
+header {
+  background: none repeat scroll 0 0 #2B332E;
+  border-bottom: 4px solid #7ECC64;
+  color: #FFFFFF;
+  min-width: 968px;
+  position: relative;
+  z-index: 9999; }
+
+#body {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+
+header {
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
+
+header h1 {
+  padding-top: 10px;
+  margin: 0;
+  height: 40px; }
+
+header #global_title .logo {
+  background: url("http://media.everyblock.com/images/citylogos/logo-dc.gif") no-repeat scroll 16px 8px transparent;
+  float: left;
+  height: 42px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 320px; }
+
+#home-title .title {
+  background-image: url("http://media.everyblock.com/images/citylogos/homepagelogo-dc.gif");
+  background-position: 0 0;
+  float: left;
+  width: 420px; }
+
+#home-title span {
+  background-repeat: no-repeat;
+  height: 33px;
+  overflow: hidden;
+  text-indent: -9999px; }
+
+#home-title .tagline {
+  background-image: url("http://media.everyblock.com/v19104e5a85d42bb8f63c5e87bcf85844/images/home_tagline.gif");
+  background-position: 0 12px;
+  float: right;
+  width: 223px; }
+
+#home-title {
+  height: 33px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 0 16px; }
+
+.module {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 4px solid #EBF2EE;
+  float: left;
+  margin: 0 -5px 1em;
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+
+.module-content {
+  border: 1px solid #C0CCC4;
+  overflow: hidden;
+  padding: 0.75em 16px; }
+
+#intro h2 {
+  font-size: 1.7em;
+  font-weight: bold; }
+
+#intro-search {
+  background: url("http://media.everyblock.com/va228f6cdfada5e1d5a5f8fefe3fc99d4/images/homeicon_address.gif") no-repeat scroll 0 0 transparent;
+  float: left;
+  margin-right: 16px;
+  padding-left: 52px;
+  width: 470px; }
+
+#intro-search .intro {
+  color: #808C85;
+  font-size: 1.2em; }
+
+#intro-search form .textinput {
+  float: left;
+  margin-right: 0;
+  width: 265px; }
+
+.textinput, input[type="text"], input[type="password"], textarea {
+  border: 1px solid #C0CCC4;
+  color: #2B332E;
+  font-size: 1.2em;
+  padding: 0.3em; }
+
+#intro-search form .button {
+  margin-left: -1px;
+  max-height: 2.14em;
+  padding: 0.3em 10px;
+  width: 55px; }
+
+.button:hover {
+  border-color: #808c85;
+  color: #2b332e; }
+
+.button {
+  background-color: #EBF2EE!important;
+  background-image: url("../images/buttonbg.gif");
+  background-repeat: repeat-x;
+  border: 1px solid #C0CCC4;
+  color: #2B332E;
+  cursor: pointer;
+  float: left;
+  font-size: 0.875em;
+  font-weight: bold;
+  padding: 0.25em 8px;
+  text-shadow: 0 1px #FFFFFF; }
+
+#intro-explore {
+  float: left;
+  width: 190px;
+  padding: 0 16px;
+  margin-right: 16px;
+  padding-left: 72px;
+  border: 1px solid #DBE6DF;
+  border-width: 0 1px;
+  background: url(http://media.everyblock.com/va228f6cdfada5e1d5a5f8fefe3fc99d4/images/homeicon_locations.gif) 16px 0 no-repeat; }
+
+#intro-explore ul {
+  list-style-type: none;
+  margin-left: 0; }
+
+#intro-explore li {
+  overflow: hidden; }
+
+#intro-explore ul a {
+  font-size: 0.875em;
+  font-weight: bold; }
+
+#intro-help {
+  float: left;
+  width: 75px;
+  background: url(http://media.everyblock.com/va228f6cdfada5e1d5a5f8fefe3fc99d4/images/homeicon_help.gif) no-repeat; }
+
+#intro-help #faq-link {
+  margin-top: 56px;
+  width: 66px;
+  height: 88px;
+  float: left;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url(http://media.everyblock.com/va228f6cdfada5e1d5a5f8fefe3fc99d4/images/home_faq.gif) no-repeat; }
+
+.module .number {
+  font-size: 1.125em;
+  padding-right: 0.2em; }
+
+strong {
+  font-weight: bold; }
+
+#intro-explore ul a {
+  font-size: 1.2em;
+  font-weight: bold; }
+
+.selector {
+  background: url("../images/tab-line.gif") repeat-x scroll 0 50% transparent;
+  height: 48px;
+  width: 100%;
+  margin-bottom: 20px; }
+
+.selector ul {
+  list-style-type: none; }
+
+.selector ul li {
+  float: right;
+  background-color: #fff;
+  padding: 15px 5px; }
+
+.selector ul li:first {
+  margin-right: 6px; }
+
+.selector span.current {
+  float: right;
+  background-color: #C0CCC4;
+  color: #2B332E;
+  padding: 5px 5px;
+  margin: 11px 0; }
+
+.selector span.desc {
+  float: left;
+  background-color: #fff;
+  padding: 2px 10px;
+  font-size: 2em; }
+
+.article:first {
+  margin: 0; }
+
+.article {
+  margin-top: 20px;
+  padding-bottom: 30px; }
+
+.article .entry {
+  float: left;
+  margin-left: 40px; }
+
+.article .entry h3.title {
+  border-bottom: 1px solid  #C0CCC4;
+  font-weight: bold;
+  margin: 0px;
+  padding-bottom: 10px; }
+
+.article .entry span.date {
+  float: right;
+  background-color: #EBF2EE;
+  padding: 2px 5px; }
+
+.article .entry .brief {
+  float: left;
+  margin-right: 8px;
+  margin-top: 24px;
+  width: 713px; }
+
+.article .rank {
+  float: left;
+  padding-left: 22px;
+  width: 60px; }
+
+.article .rank a {
+  -moz-border-radius: 3px 3px 3px 3px;
+  background: url("../images/stream_icons.png") no-repeat scroll left top #f3f3f1;
+  color: #858377;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 21px 9px 5px;
+  text-align: center;
+  text-decoration: none; }
+
+.article .rank a:hover {
+  background: url("../images/stream_icons.png") no-repeat scroll left top #ebf2ee; }
+
+.article .rank a.like {
+  background-position: 50% 6px; }
+
+.article .rank a.comment {
+  background-position: 50% -175px; }
+
+.seperator {
+  clear: both;
+  border-top: 4px solid #EBF2EE;
+  padding-top: 0.5em; }
+
+.clear {
+  clear: both; }

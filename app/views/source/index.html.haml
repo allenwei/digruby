@@ -1,0 +1,62 @@
+%h1#home-title
+  %span.title EveryBlock Washington
+  %span.tagline &mdash; A news feed for your block
+
+#intro.module
+  .module-content
+    #intro-search
+      %h2 Enter A RSS Source URL
+      %p.intro 
+        We gather all sorts of local info daily so you can follow news near you.
+        - form_tag do
+          %input#homepage-searchinput.textinput.placeholder{:type => "text",:placeholder => "RSS Source URL"}
+          %input.button{:type => "text",:value => "Submit"}
+    #intro-explore
+      %h2 Explore DigRuby 
+      %ul 
+        %li 
+          %strong.number 02
+          %a{:href => ""} Articles
+    #intro-help
+      %p
+        %a#faq-link{:href => ""} New Here?
+
+#articles.module 
+  .module-content 
+    .selector
+      %ul
+        %li 
+          %a 
+            %strong Top in 24 Hr
+        %li 
+          %a
+            %strong 7 Days
+      %span.current
+        %strong Most Recent
+      %span.desc
+        %strong Articles
+    .article 
+      .rank
+        %a.like 9
+        %a.comment 9
+      .entry 
+        %h3.title 
+          %a The end of LOST has been hard on everyone (pic) 
+        %span.date Jun 7, 2010
+        .brief
+          foreignpolicy.com  —  Prime Minister Naoto Kan is shaping up to be another miserable failure. What's going wrong?  (Submitted by awgatsby)
+      .clear
+    .seperator
+    .article 
+      .rank
+        %a.like 9
+        %a.comment 9
+      .entry 
+        %h3.title 
+          %a The end of LOST has been hard on everyone (pic) 
+        %span.date Jun 7, 2010
+        .brief
+          foreignpolicy.com  —  Prime Minister Naoto Kan is shaping up to be another miserable failure. What's going wrong?  (Submitted by awgatsby)
+      .clear
+    .seperator
+

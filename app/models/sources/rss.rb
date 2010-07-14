@@ -5,7 +5,7 @@ module Sources
     def update(time = nil)
       feed = Feedzirra::Feed.fetch_and_parse(self.feed_url)
       feed.entries.each do |entry|
-        self.entries.create Entries::Rss.new_entry_attrs(entry)
+        Entries::Rss.create_by(self,entry)
       end
     end
   end

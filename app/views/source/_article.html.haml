@@ -4,12 +4,21 @@
     %a.comment 0
   .entry 
     %h3.title 
-      %a{:href => entry.url,:target => "_blank"}
+      %a{:href => s_path(entry.short_url),:target => "_blank"}
         =entry.title
     %span.date 
       =entry.date_published.to_date
     .brief
+      %span.source
+        %a{:href => entry.source.url}
+          =entry.source.url
+          \-
       =entry.description
+    .tags 
+      Tags:
+      -entry.tags.each_with_index do |tag,index|
+        %a{:href => url_for(tag)} 
+          =tag.name
   .clear
   .seperator
 

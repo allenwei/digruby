@@ -4,11 +4,9 @@ module Entries
     def self.new_entry_attrs(entry)
       mappings = {
         :title => :title ,
-        #:content => :content ,
         :date_published => :published,
         :url => :url,
         :author => :author,
-        :categories => :categories,
         :description => :summary
       }
 
@@ -28,5 +26,10 @@ module Entries
       end
       attrs
     end
+
+    def self.tags(entry)
+      entry.categories
+    end
+
   end
 end

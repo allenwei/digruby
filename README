@@ -5,19 +5,30 @@ This is Allen Wei's experimental project, aimed at trying cutting edge technique
 
 Techniques will involved
 ====================
-Blue Print Css Framework 
 
+VIEW
+===
 HAML
 SASS
-
 HTML5
+Blue Print Css Framework 
 
+
+TEST
+===
+RSpec
+RR Mock
+Cucumber with Capybara
+
+DB
+===
 Postresql 
-Heroku
-Rspec TDD
-Cucumber BDD
-Capybara
 MongoDB
+
+Other
+===
+feedzirra - Fastest RSS Parser
+
 Websocket
 
 

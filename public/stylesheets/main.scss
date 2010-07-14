@@ -202,12 +202,12 @@ strong {
   display:none;
 }
 
-
-
-
 .article .entry {
-  float:left;
-  margin-left:25px;
+  margin-left:100px;
+}
+
+.article .entry .source{
+  font-size:0.9em;
 }
 
 .article .entry h3.title {
@@ -216,7 +216,6 @@ strong {
   margin:0px;
   padding-bottom:5px;
   text-transform:capitalize;
-  text-shadow: 1px 1px 1px  #C0CCC4;
 }
 
 .article .entry  span.date {
@@ -231,6 +230,15 @@ strong {
   width:713px;
   font-size:1.2em;
 }
+
+.article .entry .tags  {
+  margin-top:10px;
+  float:left;
+  font-size:1.2em;
+}
+
+
+
 .article .rank{
   float:left;
   padding-left:22px;
@@ -270,3 +278,5 @@ strong {
 .clear {
   clear:both
 }
+
+

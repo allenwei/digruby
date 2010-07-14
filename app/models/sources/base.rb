@@ -7,8 +7,8 @@ module Sources
       true
     end
 
-    def update(time)
-
+    def update(time=nil)
+      raise "Not Implement"
     end
   end
 end

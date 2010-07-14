@@ -41,4 +41,5 @@ Rails::Initializer.run do |config|
   config.after_initialize do 
     Haml::Template.options[:format] = :html5
   end
+  SHORT_URL_OFFSET = 32123
 end

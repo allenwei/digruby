@@ -181,16 +181,17 @@ strong {
   display: none; }
 
 .article .entry {
-  float: left;
-  margin-left: 25px; }
+  margin-left: 100px; }
+
+.article .entry .source {
+  font-size: 0.9em; }
 
 .article .entry h3.title {
   border-bottom: 1px solid  #C0CCC4;
   font-weight: bold;
   margin: 0px;
   padding-bottom: 5px;
-  text-transform: capitalize;
-  text-shadow: 1px 1px 1px  #C0CCC4; }
+  text-transform: capitalize; }
 
 .article .entry span.date {
   float: right;
@@ -202,6 +203,11 @@ strong {
   margin-right: 8px;
   margin-top: 5px;
   width: 713px;
+  font-size: 1.2em; }
+
+.article .entry .tags {
+  margin-top: 10px;
+  float: left;
   font-size: 1.2em; }
 
 .article .rank {

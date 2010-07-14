@@ -14,11 +14,12 @@
           =entry.source.url
           \-
       =entry.description
-    .tags 
-      Tags:
-      -entry.tags.each_with_index do |tag,index|
-        %a{:href => url_for(tag)} 
-          =tag.name
+    -if entry.tags.count > 0
+      .tags 
+        Tags:
+        -entry.tags.each_with_index do |tag,index|
+          %a{:href => url_for(tag)} 
+            =tag.name
   .clear
   .seperator
 

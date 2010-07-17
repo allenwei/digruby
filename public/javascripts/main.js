@@ -26,7 +26,11 @@ UI = function() {
                 cache	: false,
                 url		:  $("form.new_source_form").attr("action"),
                 data		: $("form.new_source_form").serializeArray(),
+                start: function(){
+                  $("form.new_source_form .loading").show();
+                },
                 success: function(data) {
+                  $("form.new_source_form .loading").hide();
                   if (data.status) {
                       $.fancybox.close(); 
                       location.reload();

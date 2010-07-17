@@ -4,8 +4,11 @@
     %h2
       Please Entry More Infomation About Your Source
   .form_body
-    #messageBox
-      %ul
+    #body_top
+      .loading{:style => "display:none"}
+        %img{:src => "/images/loading.gif"}
+      #messageBox
+        %ul
     %p 
       =f.label :source_name 
       %br
@@ -16,6 +19,10 @@
       %br
       =f.text_field :feed_url,:class => "required url"
       %em *
+    %p
+      =f.label :url
+      %br
+      =f.text_field :url,:class => "url"
   .form_button
     %input{:type => :submit, :class => :button,:value => "Submit"}
     %a.link_button#cancel_button

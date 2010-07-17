@@ -316,9 +316,13 @@ strong {
   text-align:center;
 }
 
-#messageBox {
+#body_top {
   height:50px;
   margin-bottom:5px;
+}
+
+#body_top .loading{
+  text-align:center;
 }
 #messageBox li {
   padding:3px 0;

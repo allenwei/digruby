@@ -65,7 +65,9 @@ header #global_title .logo {
 #intro-search form .textinput {
   float: left;
   margin-right: 0;
-  width: 265px; }
+  width: 368px;
+  padding: 0.5em;
+  font-weight: bold; }
 
 .textinput, input[type="text"], input[type="password"], textarea {
   border: 1px solid #C0CCC4;
@@ -77,7 +79,7 @@ header #global_title .logo {
   margin-left: -1px;
   margin-top: 7px;
   max-height: 2.75em;
-  padding: 0.35em 10px;
+  padding: 0.55em 10px;
   width: 70px; }
 
 .button:hover {
@@ -242,3 +244,51 @@ strong {
 
 .clear {
   clear: both; }
+
+.new_source_form .button {
+  margin: 5px;
+  width: 70px;
+  float: none; }
+
+.new_source_form .link_button {
+  padding: 0.25em 8px; }
+
+.new_source_form {
+  background: url("../images/homeicon_address.gif") no-repeat scroll 0 0 transparent;
+  width: 400px; }
+
+.new_source_form .form_title h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-top: -10px; }
+
+.new_source_form .form_body {
+  margin-left: 50px; }
+
+.new_source_form .form_body label {
+  font-size: 1.1em; }
+
+.new_source_form .form_body input[type="text"] {
+  font-weight: bold; }
+
+.new_source_form .form_body em {
+  font-size: 1.2em;
+  color: red; }
+
+.new_source_form .form_button {
+  text-align: center; }
+
+#messageBox {
+  height: 50px;
+  margin-bottom: 5px; }
+
+#messageBox li {
+  padding: 3px 0;
+  margin: 4px 0;
+  border: none;
+  background: none; }
+
+#messageBox li {
+  font-size: 1em;
+  font-weight: bold; }

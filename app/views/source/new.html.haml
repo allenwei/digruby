@@ -1,0 +1,26 @@
+-form_for @source,:url => {:controller => :source,:action => :create },:html => {:class =>"new_source_form"} do |f|
+  %br
+  .form_title
+    %h2
+      Please Entry More Infomation About Your Source
+  .form_body
+    #messageBox
+      %ul
+    %p 
+      =f.label :source_name 
+      %br
+      =f.text_field :name,:class => "required"
+      %em *
+    %p
+      =f.label :source_url
+      %br
+      =f.text_field :feed_url,:class => "required url"
+      %em *
+  .form_button
+    %input{:type => :submit, :class => :button,:value => "Submit"}
+    %a.link_button#cancel_button
+      Cancel
+
+
+
+  

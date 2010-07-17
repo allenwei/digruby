@@ -3,12 +3,6 @@ require 'spec_helper'
 describe Entries::Rss do 
   context "#create_by" do 
     before(:each) do
-      Entries::Base.destroy_all
-      Sources::Base.destroy_all
-      EntriesTags.destroy_all
-      Tag.destroy_all
-      
-
       @rss = Factory :rss 
       feed = YAML.load_file(data_path.join("digruby_feed.yml"))
       @entry = feed.entries.first      

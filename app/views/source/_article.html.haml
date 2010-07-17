@@ -7,12 +7,15 @@
       %a{:href => s_path(entry.short_url),:target => "_blank"}
         =entry.title
     %span.date 
-      =entry.date_published.to_date
+      =entry.date_published.try(:to_date)
     .brief
       %span.source
-        %a{:href => entry.source.url}
-          =entry.source.url
-          \-
+        -if entry.source.url
+          %a{:href => entry.source.url}
+            =entry.source.name
+        -else
+          =entry.source.name
+        \-
       =entry.description
     -if entry.tags.count > 0
       .tags 

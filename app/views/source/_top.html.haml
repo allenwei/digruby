@@ -3,10 +3,11 @@
     #intro-search
       %h2 Enter A RSS Source URL
       %p.intro 
-        We gather all sorts of local info daily so you can follow news near you.
-        - form_tag url_for(:controller => :source, :action => :submit) do
-          %input#homepage-searchinput.textinput.placeholder{:type => "text",:placeholder => "RSS Source URL",:name => :source}
+        Community Driven RSS Reader
+        - form_tag url_for(:controller => :source, :action => :new),:id => :source_url do
+          %input#homepage-searchinput.textinput.placeholder{:type => "text",:name => :source,:value => "http://"}
           %input.button{:type => "submit",:value => "Submit"}
+              
     #intro-explore
       %h2 Explore DigRuby 
       %ul 

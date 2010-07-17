@@ -11,6 +11,8 @@ gem 'bundler'
 
 gem "feedzirra"
 
+gem 'ruby-debug',:group => [:development,:test]
+
 group :test do 
   gem "rspec"
   gem "rspec-rails"

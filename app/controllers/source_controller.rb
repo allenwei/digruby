@@ -12,17 +12,7 @@ class SourceController < ApplicationController
     status = {}
     source = Sources::Rss.new(params[:sources_base])
     if source.save
-      begin
-        if source.update
-          status[:status] = true
-        else 
-          status[:status] = false 
-          status[:errors] = "Url is not correct!"
-        end
-      rescue Exception
-        status[:status] = false 
-        status[:errors] = "Url is not correct!"
-      end
+      status[:status] = true
     else 
       status[:status] = false 
       status[:errors] = source.errors.map {|error| error.join(" ")}.join(";")

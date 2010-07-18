@@ -9,16 +9,15 @@
         %img{:src => "/images/loading.gif"}
       #messageBox
         %ul
-    %p 
-      =f.label :source_name 
-      %br
-      =f.text_field :name,:class => "required"
-      %em *
     %p
       =f.label :source_url
       %br
       =f.text_field :feed_url,:class => "required url"
       %em *
+    %p 
+      =f.label :source_name 
+      %br
+      =f.text_field :name
     %p
       =f.label :url
       %br

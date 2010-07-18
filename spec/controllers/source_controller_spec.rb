@@ -11,34 +11,24 @@ describe SourceController do
 
   describe "POST create" do 
     describe "with valid params" do 
-      it "create a source and update newly created source" do 
+      it "create a source " do 
         params = {"name" => "digruby","feed_url" => "http://feeds2.feedburner.com/digruby"}
         mock(Sources::Rss).new(params) do |source|
           mock(source).save {true}
-          mock(source).update {true}
         end
         post :create,:sources_base => {:name => "digruby",:feed_url => "http://feeds2.feedburner.com/digruby"}
         @controller.should_receive(:render).with(:json => {:status => true})
       end
 
-      it "create a source and can't update newly created source" do 
+      it "can't create a source if source error happens" do 
         params = {"name" => "digruby","feed_url" => "http://feeds2.feedburner.com/digruby"}
-        mock(Sources::Rss).new(params) do |source|
-          mock(source).save {true}
-          mock(source).update {raise "an exception"}
-        end
-        post :create,:sources_base => {:name => "digruby",:feed_url => "http://feeds2.feedburner.com/digruby"}
-        @controller.should_receive(:render).with(:json => {:status => false,:errors => "Url is not correct!" })
-      end
-      it "can't create a source" do 
-        params = {"name" => "digruby","feed_url" => "http://feeds2.feedburner.com/digruby"}
-        error_message = "name can't be blank"
+        errors = [["feed_url","is invalid"]]
         mock(Sources::Rss).new(params) do |source|
           mock(source).save {false}
-          mock(source).errors {error_message}
+          mock(source).errors {errors}
         end
         post :create,:sources_base => {:name => "digruby",:feed_url => "http://feeds2.feedburner.com/digruby"}
-        @controller.should_receive(:render).with(:json => {:status => false,:errors => error_message })
+        @controller.should_receive(:render).with(:json => {:status => false,:errors => "feed_url is invalid" })
       end
 
     end 

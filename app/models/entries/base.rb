@@ -8,22 +8,10 @@ module Entries
     has_many :tags, :through => :entries_tags
     has_many :entries_tags,:class_name => "::EntriesTags",:foreign_key => :entry_id
 
-
-
+    after_create :set_short_url
 
     def abstract_class?
       true
-    end
-
-    def self.create_by(source,entry)
-      rss_entry = source.entries.create new_entry_attrs(entry)
-      rss_entry.short_url = Base52.encode(rss_entry.id,SHORT_URL_OFFSET)
-      tags(entry).each do |t|
-        tag = Tag.find_or_create_by_name(t.downcase)
-        rss_entry.tags << tag 
-      end
-      rss_entry.save
-      rss_entry
     end
 
     def self.new_entry_attrs(entry)
@@ -34,6 +22,9 @@ module Entries
       []
     end
 
+    def set_short_url
+      self.update_attributes(:short_url => Base52.encode(self.id,SHORT_URL_OFFSET))
+    end
 
   end
 end

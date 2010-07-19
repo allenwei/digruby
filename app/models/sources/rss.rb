@@ -6,6 +6,7 @@ module Sources
 
     attr_reader :feed
 
+    before_create :set_feed_info
     after_create :save_entries
 
 
@@ -15,6 +16,7 @@ module Sources
       feed.entries.each do |entry|
         create_entry(entry) if entry.last_modified > self.last_modified
       end
+      return true
     end
 
     def create_entry(entry)
@@ -31,6 +33,12 @@ module Sources
       return false if URI.parse(self.feed_url).host.nil?
       return false  unless @feed = Feedzirra::Feed.fetch_and_parse(self.feed_url)
       return true
+    end
+
+    def set_feed_info
+      self.name ||= @feed.title
+      self.url ||= @feed.url
+      self.last_modified == @feed.last_modified
     end
 
     def save_entries

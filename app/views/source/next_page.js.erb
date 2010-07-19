@@ -1,0 +1,6 @@
+$("#pagination").remove();
+$("#articles .module-content").append('<%= escape_javascript(render :partial => "article",:collection => @entries, :as => :entry )%>')
+<% if @entries.next_page %>
+$("#articles .module-content").append('<%= escape_javascript(render "pagination",:page => @entries.next_page) %>')
+<% end %>
+

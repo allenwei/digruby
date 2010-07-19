@@ -60,9 +60,21 @@ UI = function() {
 
 }
 
+function bind_next_page() {
+  $("#more_button").live("click",function(){
+    $.ajax({
+      type		: "GET",
+      cache	: false,
+      url		:  $(this).attr("url"),
+      dataType: "script"
+    });
+  });
+}
+
 var ui = {
   init:function (){
     bind_source_form();
+    bind_next_page();
   }
 
 };

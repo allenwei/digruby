@@ -15,4 +15,5 @@
       %span.desc
         %strong Articles
     =render :partial => 'article', :collection => @entries,:as => :entry
-
+    -if @entries.size > 0
+      =render 'pagination', :page => 2

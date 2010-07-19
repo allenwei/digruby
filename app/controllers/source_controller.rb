@@ -1,6 +1,6 @@
 class SourceController < ApplicationController
   def index
-    @entries = Entries::Base.all(:order => ['date_published desc'],:include => [:tags,:entries_tags])
+    @entries = Entries::Base.paginate(:page => params[:page],:order => 'date_published DESC',:include => [:tags,:entries_tags])
   end
 
   def new 
@@ -18,5 +18,9 @@ class SourceController < ApplicationController
       status[:errors] = source.errors.map {|error| error.join(" ")}.join(";")
     end
     render :json => status
+  end
+
+  def next_page
+    @entries = Entries::Base.paginate(:page => params[:page],:order => 'date_published DESC',:include => [:tags,:entries_tags])
   end
 end

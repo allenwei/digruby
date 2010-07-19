@@ -2,6 +2,9 @@ module Entries
   class Base < ActiveRecord::Base
     set_table_name :entries
 
+    cattr_reader :per_page
+    @@per_page = 5
+
     validates_uniqueness_of :url
 
     belongs_to :source,:class_name => "Sources::Base"

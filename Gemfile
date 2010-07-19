@@ -8,6 +8,7 @@ gem 'bson_ext'
 gem "pg"
 gem "haml"
 gem 'bundler'
+gem "will_paginate"
 
 gem "feedzirra"
 

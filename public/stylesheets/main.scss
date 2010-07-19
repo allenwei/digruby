@@ -335,3 +335,16 @@ strong {
   font-size:1em;
   font-weight:bold;
 }
+
+#pagination {
+  width:100%;
+  text-align:center;
+}
+#more_button {
+  width:100%;
+  height:40px;
+  border:1px solid #C0CCC4;   /* default border */
+  -moz-border-radius:10px;    /* radius for firefox */
+  -webkit-border-radius:10px; /* radius for safari, chrome, etc */
+}
+

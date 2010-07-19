@@ -16,6 +16,7 @@ module Sources
       feed.entries.each do |entry|
         create_entry(entry) if entry.last_modified > self.last_modified
       end
+      self.update_attributes(:last_modified => feed.last_modified)
       return true
     end
 
@@ -38,7 +39,7 @@ module Sources
     def set_feed_info
       self.name ||= @feed.title
       self.url ||= @feed.url
-      self.last_modified == @feed.last_modified
+      self.last_modified = @feed.last_modified
     end
 
     def save_entries
@@ -46,6 +47,7 @@ module Sources
       @feed.entries.each do |entry| 
         create_entry(entry)
       end
+      return true
     end
 
 

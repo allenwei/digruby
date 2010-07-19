@@ -52,8 +52,8 @@ describe Sources::Rss do
 
     it "should store entries correctly" do 
       rss = Sources::Rss.new(:feed_url => @feed_url)
-      rss.should_receive(:create_entry).with(anything()).exactly(@feed.entries.size).times
-      rss.save
+      mock(rss).create_entry(is_a(Feedzirra::Parser::RSSEntry)).times(@feed.entries.size)
+      rss.save!
     end
   end
 
@@ -97,8 +97,9 @@ describe Sources::Rss do
 
     it "should create updated entries" do 
       rss = Sources::Rss.new(:feed_url => @feed_url,:last_modified => (@feed.last_modified - 1.day))
-      rss.should_receive(:create_entry).with(anything()).at_most(@feed.entries.size).times
+      mock(rss).create_entry(is_a(Feedzirra::Parser::RSSEntry)).times(@feed.entries.size)
       assert rss.update 
+      assert rss.last_modified == @feed.last_modified
       
     end
   end

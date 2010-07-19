@@ -3,7 +3,7 @@ module Entries
     set_table_name :entries
 
     cattr_reader :per_page
-    @@per_page = 5
+    @@per_page = 10
 
     validates_uniqueness_of :url
 

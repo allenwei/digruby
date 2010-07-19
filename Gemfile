@@ -2,7 +2,7 @@ source "http://gemcutter.org"
 gem "rails", "2.3.5"
 
 #mongoDB 
-gem "mongo_mapper"
+gem "mongoid"
 gem 'bson_ext'
 
 gem "pg"

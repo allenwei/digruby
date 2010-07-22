@@ -17,14 +17,14 @@ dependencies:
     - :development
     - :test
     version: ">= 0"
-  pg: 
-    group: 
-    - :default
-    version: ">= 0"
   rails: 
     group: 
     - :default
     version: = 2.3.8
+  pg: 
+    group: 
+    - :default
+    version: ">= 0"
   haml: 
     group: 
     - :default
@@ -46,6 +46,10 @@ dependencies:
     - :test
     version: ">= 0"
   will_paginate: 
+    group: 
+    - :default
+    version: ">= 0"
+  erubis: 
     group: 
     - :default
     version: ">= 0"
@@ -84,6 +88,8 @@ specs:
     version: 3.0.4
 - ParseTree: 
     version: 3.0.5
+- abstract: 
+    version: 1.0.0
 - activesupport: 
     version: 2.3.8
 - rack: 
@@ -142,6 +148,8 @@ specs:
     version: 0.5.2
 - durran-validatable: 
     version: 2.0.1
+- erubis: 
+    version: 2.6.6
 - factory_girl: 
     version: 1.3.1
 - loofah: 
@@ -180,7 +188,7 @@ specs:
     version: 0.10.3
 - ruby-debug: 
     version: 0.10.3
-hash: f6326073d5cb016ed2de051917455f847c0e8707
+hash: f5518fbee61bebeef2fe14ab0a982f5ad6b0be68
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

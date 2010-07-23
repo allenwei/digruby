@@ -1,6 +1,7 @@
 .article 
   .rank
-    %a.like 0
+    %a.like{:id => "like_#{entry.id.to_s}",:class => (SessionRank.voted?(entry.id,session) ? "voted" : "" )} 
+      =Rank.where(:record_id => entry.id).count
     %a.comment 0
   .entry 
     %h3.title 
@@ -16,7 +17,8 @@
         -else
           =entry.source.name
         \-
-      =entry.description
+      =raw entry.description
+      .clear
     -if entry.tags.count > 0
       .tags 
         Tags:

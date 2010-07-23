@@ -12,6 +12,7 @@ module Entries
     has_many :entries_tags,:class_name => "::EntriesTags",:foreign_key => :entry_id
 
     after_create :set_short_url
+    after_create :create_rank
 
     def abstract_class?
       true
@@ -27,6 +28,10 @@ module Entries
 
     def set_short_url
       self.update_attributes(:short_url => Base52.encode(self.id,SHORT_URL_OFFSET))
+    end
+
+    def create_rank 
+      Rank.create!(:record_id => self.id,:rank => 0,:date => self.date_published)
     end
 
   end

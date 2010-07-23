@@ -71,10 +71,32 @@ function bind_next_page() {
   });
 }
 
+function bind_rank() {
+  $(".rank .like").click(function(){
+    var id = $(this).attr("id").split("_")[1];
+    var like = $(this);
+    $.ajax({
+      type     : "POST",
+      cache    : false,
+      url      : "/rank/like/"+id,
+      dataType : "json",
+      success  : function(data) {
+        if (data.success) {
+          like.addClass("voted");
+          like.text(parseInt(id)+1);
+        } else  {
+          alert(data.msg);
+        }
+      } 
+    });
+  });
+}
+
 var ui = {
   init:function (){
     bind_source_form();
     bind_next_page();
+    bind_rank();
   }
 
 };

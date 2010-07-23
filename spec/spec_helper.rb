@@ -52,6 +52,19 @@ Spec::Runner.configure do |config|
   # == Notes
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
+  config.before(:all) {}
+  config.before(:each) {}
+  config.after(:all) {}
+  config.after(:each) do 
+    puts "cleaning mongodb...."
+    Mongoid.database.collections.each do |collection|
+      unless collection.name =~ /^system\./
+        collection.remove
+      end
+    end
+    puts "finished cleaning mongodb."
+  end
+  
 end
 
 def data_path

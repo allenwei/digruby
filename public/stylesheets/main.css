@@ -234,6 +234,9 @@ strong {
 .article .rank a.like {
   background-position: 50% 6px; }
 
+.article .rank a.like.voted {
+  background-position: 50% -115px; }
+
 .article .rank a.comment {
   background-position: 50% -175px; }
 

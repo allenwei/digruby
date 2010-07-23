@@ -1,8 +1,3 @@
-This is Allen Wei's experimental project, aimed at trying cutting edge techniques.
-
-
-
-
 Techniques will involved
 ====================
 
@@ -12,6 +7,12 @@ HAML
 SASS
 HTML5
 Blue Print Css Framework 
+XSS protection
+
+JS
+===
+jQuery
+Fancybox
 
 
 TEST
@@ -22,14 +23,31 @@ Cucumber with Capybara
 
 DB
 ===
-Postresql 
-MongoDB
+Postresql - store feeds
+MongoDB - store user rank, Mongoid Adapter
 
 Other
 ===
 feedzirra - Fastest RSS Parser
 
-Websocket
+WILL USE
+========
+RSS PUSH
+==
+XMPP PubSub
+PubSubHubbub API
+
+Node.js
+===
+use websocket, redis, Twitter API, to get recent rubyiest tweets
+Michael Bleigh's Slide http://www.slideshare.net/mbleigh/nodejs-and-ruby
+http://github.com/andregoncalves/twitter-nodejs-websocket
+
+TODOs
+====================
+improve performance of index page, too many sql query
+
+
 
 
 

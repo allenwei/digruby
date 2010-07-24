@@ -5,6 +5,8 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 require 'spec/mocks'
+require 'remarkable'
+require 'remarkable_activerecord'
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-raspec/mocksils'

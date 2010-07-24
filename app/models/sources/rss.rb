@@ -1,5 +1,6 @@
 module Sources
   class Rss < Base
+
     validates_uniqueness_of :feed_url
 
     has_many :entries, :class_name => "::Entries::Rss", :foreign_key => :source_id

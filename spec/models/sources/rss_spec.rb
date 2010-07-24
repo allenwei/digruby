@@ -1,15 +1,8 @@
 require 'spec_helper'
 
 describe Sources::Rss do 
-  before(:each) do
-    #@rss = Factory :rss 
-    #Entries::Base.destroy_all
-    #Sources::Base.destroy_all
-    #EntriesTags.destroy_all
-    #Tag.destroy_all
-  end
-  describe "#create" do 
-  end
+
+  should_have_many(:entries)
 
   describe "#feed_url_valid?" do 
     it "should return false if url is invalid" do 
@@ -100,7 +93,7 @@ describe Sources::Rss do
       mock(rss).create_entry(is_a(Feedzirra::Parser::RSSEntry)).times(@feed.entries.size)
       assert rss.update 
       assert rss.last_modified == @feed.last_modified
-      
+
     end
   end
 

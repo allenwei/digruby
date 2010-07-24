@@ -10,7 +10,7 @@ UI = function() {
       var form_url = $(this).attr("action");
       $.fancybox.showActivity();
       $.ajax({
-        type		: "POST",
+        type		: "GET",
         cache	: false,
         url		:  form_url,
         data		: $(this).serializeArray(),

@@ -11,9 +11,12 @@ development:
   <<: *defaults
   database: digruby_development
 
-test:
+test: &test
   <<: *defaults
   database: digruby_test
+
+cucumber:
+  <<: *test
 
 # set these environment variables on your prod server
 production:

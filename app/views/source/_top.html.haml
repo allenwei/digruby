@@ -4,7 +4,7 @@
       %h2 Enter A RSS Source URL
       %p.intro 
         Community Driven RSS Reader
-        - form_tag url_for(:controller => :source, :action => :new),:id => :source_url do
+        - form_tag url_for(:controller => :source, :action => :new),:id => :source_url,:method => :get do
           %input#homepage-searchinput.textinput.placeholder{:type => "text",:name => :source,:value => "http://"}
           %input.button{:type => "submit",:value => "Submit"}
               
@@ -12,11 +12,11 @@
       %h2 Explore DigRuby 
       %ul 
         %li 
-          %strong.number
+          %strong.number#rss_count
             =Sources::Base.count
           %a{:href => ""} Rss Sources
         %li 
-          %strong.number 
+          %strong.number#entry_count
             =Entries::Base.count
           %a{:href => ""} Articles
 

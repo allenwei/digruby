@@ -18,9 +18,11 @@ test:
 # set these environment variables on your prod server
 production:
   <<: *defaults
+<% if ENV["MONGOHQ_URL"] %>
   host: <%= URI.parse(ENV['MONGOHQ_URL']).host %>
   port: <%= URI.parse(ENV['MONGOHQ_URL']).port.to_s %>
   username: <%= URI.parse(ENV['MONGOHQ_URL']).user %>
   passsword: <%= URI.parse(ENV['MONGOHQ_URL']).password %>
   database: <%= URI.parse(ENV['MONGOHQ_URL']).path.gsub('/', '') %>
+<% end %>
 

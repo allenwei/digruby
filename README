@@ -46,7 +46,7 @@ http://github.com/andregoncalves/twitter-nodejs-websocket
 TODOs
 ====================
 improve performance of index page, too many sql query
-
+Upgrade to Rails 3
 
 
 

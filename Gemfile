@@ -19,6 +19,7 @@ gem 'ruby-debug',:group => [:development,:test]
 group :test do 
   gem "rspec"
   gem "rspec-rails"
+  gem "remarkable_rails"
   gem "cucumber"
   gem "cucumber-rails"
   gem "capybara"

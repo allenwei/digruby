@@ -1,7 +1,8 @@
 .article 
   .rank
     %a.like{:id => "like_#{entry.id.to_s}",:class => (SessionRank.voted?(entry.id,session) ? "voted" : "" )} 
-      =Rank.where(:record_id => entry.id).count
+      =#Rank.where(:record_id => entry.id).count
+      0
     %a.comment 0
   .entry 
     %h3.title 

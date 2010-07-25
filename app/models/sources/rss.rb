@@ -39,8 +39,8 @@ module Sources
     end
 
     def set_feed_info
-      self.name ||= (@feed.title || @feed.url)
-      self.url ||= @feed.url
+      self.name = (@feed.title || @feed.url) if self.name.blank?
+      self.url = @feed.url if self.url.blank?
       self.last_modified = @feed.last_modified
     end
 

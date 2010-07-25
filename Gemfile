@@ -4,6 +4,7 @@ gem "rails", "2.3.8"
 #mongoDB 
 gem "mongoid"
 gem 'bson_ext'
+gem "mongo_mapper"
 
 gem "pg"
 gem "haml"

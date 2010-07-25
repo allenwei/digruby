@@ -25,6 +25,10 @@ dependencies:
     group: 
     - :default
     version: = 2.3.8
+  mongo_mapper: 
+    group: 
+    - :default
+    version: ">= 0"
   haml: 
     group: 
     - :default
@@ -170,10 +174,16 @@ specs:
     version: 1.2.4
 - heckle: 
     version: 1.4.3
+- jnunemaker-validatable: 
+    version: 1.8.4
 - linecache: 
     version: "0.43"
 - mongo: 
     version: 1.0.5
+- plucky: 
+    version: 0.3.2
+- mongo_mapper: 
+    version: 0.8.2
 - will_paginate: 
     version: 2.3.14
 - mongoid: 
@@ -198,7 +208,7 @@ specs:
     version: 0.10.3
 - ruby-debug: 
     version: 0.10.3
-hash: a72b749f8bd4750c4a126e6dde70694853773712
+hash: 28799de1355e9fba19d3a36cd774e81284676013
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

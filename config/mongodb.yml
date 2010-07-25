@@ -16,7 +16,7 @@ cucumber:
 production:
   <<: *defaults
 <% if ENV["MONGOHQ_URL"] %>
-  url: <%= ENV['MONGOHQ_URL'] %>
+  uri: <%= ENV['MONGOHQ_URL'] %>
 <% else %>
   host: localhost
   database: digruby_production

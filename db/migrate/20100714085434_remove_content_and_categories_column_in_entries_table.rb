@@ -5,7 +5,7 @@ class RemoveContentAndCategoriesColumnInEntriesTable < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :content, :string ,:limit => 20000
-    add_column :categories, :string 
+    add_column :entries, :content, :string ,:limit => 20000
+    add_column :entries, :categories, :string 
   end
 end

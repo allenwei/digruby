@@ -47,19 +47,10 @@ Rails::Initializer.run do |config|
   config.after_initialize do 
     Haml::Template.options[:format] = :html5
 
-    #file_name = File.join(File.dirname(__FILE__), "mongoid.yml")
-    #settings = YAML.load(ERB.new(File.new(file_name).read).result)
-
-    #Mongoid.configure do |config|
-      #config.from_hash(settings[RAILS_ENV])
-    #end
-    if ENV['MONGOHQ_URL']
-      MongoMapper.config = {RAILS_ENV => {'uri' => ENV['MONGOHQ_URL']}}
-    else
-      MongoMapper.config = {RAILS_ENV => {'uri' => 'mongodb://localhost/digruby'}}
-    end
+    file_name = File.join(File.dirname(__FILE__), "mongodb.yml")
+    settings = YAML.load(ERB.new(File.new(file_name).read).result)
+    MongoMapper.config = settings
     MongoMapper.connect(RAILS_ENV)
-
     
   end
   SHORT_URL_OFFSET = 32123

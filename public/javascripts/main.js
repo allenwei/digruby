@@ -83,7 +83,7 @@ function bind_rank() {
       success  : function(data) {
         if (data.success) {
           like.addClass("voted");
-          like.text(parseInt(id)+1);
+          like.text(parseInt($(like).text())+1);
         } else  {
           alert(data.msg);
         }

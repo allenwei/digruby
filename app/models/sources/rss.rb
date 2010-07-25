@@ -31,7 +31,6 @@ module Sources
     end
 
     def feed_url_valid?
-      debugger
       return false if self.feed_url.blank?
       return false if URI.parse(self.feed_url).host.nil?
       return false  unless @feed = Feedzirra::Feed.fetch_and_parse(self.feed_url)
@@ -40,8 +39,7 @@ module Sources
     end
 
     def set_feed_info
-      debugger
-      self.name ||= @feed.title
+      self.name ||= (@feed.title || @feed.url)
       self.url ||= @feed.url
       self.last_modified = @feed.last_modified
     end

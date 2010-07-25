@@ -69,10 +69,6 @@ dependencies:
     group: 
     - :test
     version: ">= 0"
-  mongoid: 
-    group: 
-    - :default
-    version: ">= 0"
   remarkable_rails: 
     group: 
     - :test
@@ -154,8 +150,6 @@ specs:
     version: 0.7.7.1
 - database_cleaner: 
     version: 0.5.2
-- durran-validatable: 
-    version: 2.0.1
 - erubis: 
     version: 2.6.6
 - factory_girl: 
@@ -184,10 +178,6 @@ specs:
     version: 0.3.2
 - mongo_mapper: 
     version: 0.8.2
-- will_paginate: 
-    version: 2.3.14
-- mongoid: 
-    version: 1.9.1
 - pg: 
     version: 0.9.0
 - rails: 
@@ -208,7 +198,9 @@ specs:
     version: 0.10.3
 - ruby-debug: 
     version: 0.10.3
-hash: 28799de1355e9fba19d3a36cd774e81284676013
+- will_paginate: 
+    version: 2.3.14
+hash: 8d02e2a4ed74058f62e29ce7168b138c361020d6
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

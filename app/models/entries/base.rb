@@ -31,7 +31,7 @@ module Entries
     end
 
     def create_rank 
-      Rank.create!(:record_id => self.id,:rank => 0,:date => self.date_published)
+      Rank.create!(:record_id => self.id,:rank => 0,:date => self.date_published.utc)
     end
 
   end

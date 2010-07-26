@@ -1,14 +1,4 @@
 class TagsController < ApplicationController
-  # GET /tags
-  # GET /tags.xml
-  def index
-    @tags = Tag.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tags }
-    end
-  end
 
   # GET /tags/1
   # GET /tags/1.xml
@@ -20,4 +10,7 @@ class TagsController < ApplicationController
       format.xml  { render :xml => @tag }
     end
   end
+
+ 
+
 end

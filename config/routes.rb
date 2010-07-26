@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
-  map.resources :tags
-  map.resources :source, :collection => {:next_page => :get}
+  map.resources :tags,:only => [:show]
+  map.resources :source, :collection => {:next_page => :get},:except => [:destroy,:edit,:update]
   map.s 's/:id',:controller => :s, :action => :index
 
   map.rank 'rank/:action/:id', :controller => :rank, :requirements => {:id => /\d+/},:conditions => { :method => :post }
